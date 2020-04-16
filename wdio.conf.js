@@ -29,7 +29,10 @@ exports.config = {
     framework: 'mocha',
     reporters: ['dot',
     ['junit', {
-        outputDir: './'
+        outputDir: './results/',
+        outputFileFormat: function(options) { // optional
+            return `results-${options.cid}.${options.capabilities}.xml`
+        }
     }]
     ],
 
